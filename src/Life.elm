@@ -15,11 +15,17 @@ nextStatus numberOfLivingNeighbors currentStatus =
                 else if numberOfLivingNeighbors == 3 && currentStatus == Dead
                     then Alive
                     else ???
-        
+
 livingNeighbors : Board -> Cell -> Int
 livingNeighbors currentBoard { x, y } = ???
+    Board{x = x + 1, y = y}
+    Board{x = x + 1, y = y + 1}
+    Board{x = x + 1, y = y - 1}
+    Board{x = x, y = y + 1}
+    Board{x = x, y = y - 1}
+    Board{x = x - 1, y = y + 1}
+    Board{x = x - 1, y = y}
+    Board{x = x - 1, y = y = 1}
 
--- this function will represent one tick of our game,
--- it will use the two functions above
 nextBoard : Board -> Board
 nextBoard currentBoard = currentBoard
