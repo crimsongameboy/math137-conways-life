@@ -8,8 +8,13 @@ type alias Board = Cell -> CellStatus
 
 nextStatus : Int -> CellStatus -> CellStatus
 nextStatus numberOfLivingNeighbors currentStatus = 
-    case (numberOfLivingNeighbors, currentStatus) of
-        (???, ???) -> ???
+        if numberOfLivingNeighbors < 2 && currentStatus == Alive
+            then Dead
+            else if numberOfLivingNeighbors > 3 && currentStatus == Alive
+                then Dead
+                else if numberOfLivingNeighbors == 3 && currentStatus == Dead
+                    then Alive
+                    else ???
         
 livingNeighbors : Board -> Cell -> Int
 livingNeighbors currentBoard { x, y } = ???
