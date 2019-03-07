@@ -6,7 +6,7 @@ type CellStatus = Dead | Alive
 
 type alias Board = Cell -> CellStatus
 
-nextStatus : Int -> CellStatus - CellStatus
+nextStatus : Int -> CellStatus -> CellStatus
 nextStatus numberOfLivingNeighbors currentStatus = 
     case (numberOfLivingNeighbors, currentStatus) of
         (???, ???) -> ???
